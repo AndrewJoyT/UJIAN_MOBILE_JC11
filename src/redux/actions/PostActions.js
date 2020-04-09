@@ -5,6 +5,8 @@ import {
   GET_POST_LIST,
   REFRESHING,
   GET_RESTAURANT_DETAILS,
+  GET_REVIEW_ALL,
+  GET_REVIEW_START,
 } from '../../helpers/types';
 
 export const getPostList = () => {
@@ -26,5 +28,20 @@ export const getPostList = () => {
 };
 
 export const getRestaurantDetails = data => {
-  return {type: GET_RESTAURANT_DETAILS, payload: data};
+  return async dispatch => {
+    const options = {headers: {'user-key': API_KEY}};
+    dispatch({type: GET_REVIEW_START});
+
+    try {
+      let review = await Axios.get(
+        `${API_URL}/reviews?res_id=${data.id}&start=1&count=10`,
+        options,
+      );
+
+      dispatch({type: GET_REVIEW_ALL, payload: review.data.user_reviews});
+      dispatch({type: GET_RESTAURANT_DETAILS, payload: data});
+    } catch (error) {
+      console.log('rusak', error);
+    }
+  };
 };

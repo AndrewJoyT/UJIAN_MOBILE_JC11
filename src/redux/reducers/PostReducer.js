@@ -8,16 +8,15 @@ const INITIAL_STATE = {
   Refresh: false,
   Loading: true,
 
-  PostList: [],
-  // PostList: [
-  //   {
-  //     name: '',
-  //     featured_image: '',
-  //     user_rating: {
-  //       aggregate_rating: '',
-  //     },
-  //   },
-  // ],
+  PostList: [
+    // {
+    //   name: '',
+    //   featured_image: '',
+    //   user_rating: {
+    //     aggregate_rating: '',
+    //   },
+    // },
+  ],
 
   PostDetails: {
     name: '',

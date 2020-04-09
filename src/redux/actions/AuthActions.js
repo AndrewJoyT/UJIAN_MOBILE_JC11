@@ -1,6 +1,5 @@
-import AsyncStorage from '@react-native-community/async-storage';
-
 import {LOGIN_START, LOGIN_FAILED, LOGIN_SUCCESS} from '../../helpers/types';
+import AsyncStorage from '@react-native-community/async-storage';
 import {Alert} from 'react-native';
 
 export const isAlreadyLogin = () => {
@@ -29,8 +28,6 @@ export const onUserLogin = username => {
         '',
         'Input username!',
         [
-          // {text: 'Ask me later', onPress: () => console.log('later pressed')},
-          // {text: 'Cancel', onPress: () => console.log('cancel pressed')},
           {text: 'Ok', onPress: () => console.log('ok pressed')},
         ],
         {cancelable: false},
