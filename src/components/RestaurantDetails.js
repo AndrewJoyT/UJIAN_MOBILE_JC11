@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, Icon} from 'native-base';
+import {Text, Icon, Button} from 'native-base';
 import {View, ScrollView, StyleSheet, Platform} from 'react-native';
 import {Header, Card, Avatar} from 'react-native-elements';
 import {useSelector} from 'react-redux';
@@ -132,6 +132,12 @@ export const RestaurantDetails = ({navigation}) => {
               );
             }
           })}
+          <Button
+            onPress={() => navigation.navigate('FullReview')}
+            bordered
+            style={{borderColor: 'tomato', borderRadius: 10}}>
+            <Text style={{color: 'tomato'}}>See All Review</Text>
+          </Button>
         </Card>
       </ScrollView>
     </View>

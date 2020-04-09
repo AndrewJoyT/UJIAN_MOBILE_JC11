@@ -21,7 +21,7 @@ export const Logout = ({navigation, rootStack}) => {
   const onBtnLogoutPress = () => {
     Alert.alert(
       '',
-      'Are you sure to logout?',
+      'Anda yakin ingin Keluar?',
       [
         // {text: 'Ask me later', onPress: () => console.log('Later pressed')},
         {text: 'Cancel', onPress: () => console.log('Cancel pressed')},
